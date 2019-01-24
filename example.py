@@ -12,17 +12,7 @@ from sample_models import LinearRegressionExample
 
 # Dalex operations
 from pyDalex import PyDalex
-dalex = PyDalex()
+pyDalex = PyDalex()
 
-explainer = dalex.explain(model, data, labels, names)
-model_performance = dalex.model_performance(explainer)
-variable_importance = dalex.variable_importance(explainer)
-prediction_breakdown = dalex.prediction_breakdown(explainer, data[0,], names)
-variable_response = dalex.variable_response(explainer, names[0])
-
-# Saving plots
-from save_plot import save_plot
-save_plot(model_performance, 'plots/model_performance.png')
-save_plot(variable_importance, 'plots/variable_importance.png')
-save_plot(prediction_breakdown, 'plots/prediction_breakdown.png')
-save_plot(variable_response, 'plots/variable_response.png')
+explainer = pyDalex.explain(model, data, labels, names)
+pyDalex.generate_website(model)
