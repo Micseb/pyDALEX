@@ -11,8 +11,6 @@ from sample_models import LinearRegressionExample
 (data, labels, model, names) = LinearRegressionExample().create_sample_linear_regression()
 
 # Dalex operations
-from pyDalex import PyDalex
-pyDalex = PyDalex()
-
-explainer = pyDalex.explain(model, data, labels, names)
-pyDalex.generate_website(model)
+from py_dalex import py_dalex
+explainer = py_dalex.explain(model, data, labels, names)
+py_dalex.generate_website(explainer)
