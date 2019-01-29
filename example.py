@@ -13,4 +13,4 @@ from sample_models import LinearRegressionExample
 # Dalex operations
 from py_dalex import py_dalex
 explainer = py_dalex.explain(model, data, labels, names)
-py_dalex.generate_website(explainer)
+py_dalex.generate_website([explainer])

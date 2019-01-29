@@ -18,5 +18,5 @@ class PyDalex:
         r_data = robjects.DataFrame({names[x]:  robjects.FloatVector(data[:,x]) for x in range(data.shape[1])})
         return self._dalex_package.explain(model=r_model, data=r_data, y=labels, predict_function=predict_function)
     
-    def generate_website(self, explainer):
-        self._model_down_package.modelDown(explainer)
+    def generate_website(self, explainers):
+        self._model_down_package.modelDown(*explainers)
