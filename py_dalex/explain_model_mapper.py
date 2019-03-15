@@ -1,8 +1,8 @@
 from .predict_function_generator import PredictFunctionGenerator
-from .explain_model import ExplainModel
+from .models.explain_model import ExplainModel
 import rpy2.robjects as robjects
 
-class ExplainRequestMapper:
+class ExplainModelMapper:
     def __init__(self):
         self._predict_function_generator = PredictFunctionGenerator()  
 
